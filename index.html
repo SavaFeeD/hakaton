@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/argon.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-grid.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-reboot.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-reboot.min.css">
+    <link href="assets/image/logo.png" rel="icon" type="image/png">
+    <link rel="stylesheet" href="css/main.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
+
+    <script defer src="js/vue.js"></script>
+    <script defer src="js/main.js"></script>
+    <title>НУМО</title>
+</head>
+<body>
+<section id="app">
+    <section v-if="window == 'registerVolunteer'" class="form container col-12">
+        <h3>Регистрация волонтёра</h3>
+        <form>
+            <label class="text-uppercase font-weight-bold">Фио</label>
+            <input type="text" class="form-control" placeholder="ФИО">
+            <br>
+            <label class="text-uppercase font-weight-bold">Ваш номер телефона</label>
+            <input type="tel" class="form-control" placeholder="Ваш номер телефона">
+            <br>
+            <label class="text-uppercase font-weight-bold">Скан паспорта</label>
+            <input type="file">
+            <br>
+            <br>
+            <label class="text-uppercase font-weight-bold">Ваша фотография с паспортом</label>
+            <input type="file" placeholder="Ваша фотография с паспортом">
+            <br>
+            <br>
+            <label class="text-uppercase font-weight-bold">Справка о судимости</label>
+            <input type="file">
+            <br>
+            <br>
+            <label class="text-uppercase font-weight-bold">Справка от нарколога</label>
+            <input type="file">
+            <br>
+            <br>
+            <label class="text-uppercase font-weight-bold">Логин</label>
+            <input type="text" class="form-control" placeholder="Логин">
+            <br>
+            <label class="text-uppercase font-weight-bold">Пароль</label>
+            <input type="password" class="form-control" placeholder="Пароль">
+            <br>
+            <label class="text-uppercase font-weight-bold">Ваш аватар</label>
+            <input type="file">
+            <br>
+            <br>
+            <label class="text-uppercase font-weight-bold">Адрес</label>
+            <input type="text" class="form-control" placeholder="Адрес">
+            <br>
+            <button class="btn btn-1 btn-primary"> Зарегистрироваться</button>
+            <section class="links">
+                <span>
+                    уже есть аккаунт?<br>
+                    Авторизироваться.
+                </span>
+                <span @click="window = `registerOVZ`">
+                    Регистрация человека с ОВЗ
+                </span>
+                <span @click="window = `auth`">Авторизироваться</span>
+            </section>
+        </form>
+    </section>
+    <section v-if="window == `registerOVZ`" class="form container col-12">
+        <h3>Регистрация человека с ОВЗ</h3>
+        <form>
+            <label class="text-uppercase font-weight-bold">Ваше имя</label>
+            <input type="text" class="form-control" placeholder="Ваше имя">
+            <br>
+            <label class="text-uppercase font-weight-bold">Ваш логин</label>
+            <input type="tel" class="form-control" placeholder="Ваш логин">
+            <br>
+            <label class="text-uppercase font-weight-bold">Ваш пароль</label>
+            <input type="text" class="form-control" placeholder="Ваш пароль">
+            <br>
+            <label class="text-uppercase font-weight-bold">Телефон на случай черезвычайных ситуация</label>
+            <input type="password" class="form-control" placeholder="Телефон на случай черезвычайных ситуация">
+            <br>
+            <label class="text-uppercase font-weight-bold">Адрес факстического проживания</label>
+            <input type="password" class="form-control" placeholder="Адрес факстического проживания">
+            <br>
+            <label class="text-uppercase font-weight-bold">Ваши Ограничения</label>
+            <br>
+            <select name="" id="">
+                <option value="">1</option>
+                <option value="">2</option>
+                <option value="">3</option>
+            </select>
+            <br>
+            <br>
+            <button class="btn btn-1 btn-primary"> Зарегистрироваться</button>
+            <section class="links">
+                <span>
+                    уже есть аккаунт?<br>
+                    Авторизироваться.
+                </span>
+                <span @click="window = `registerVolunteer`">
+                    Регистрация волонтёра
+                </span>
+                <span @click="window = `auth`">Авторизироваться</span>
+            </section>
+        </form>
+    </section>
+    <section v-if="window == `auth`" class="form container col-12">
+        <h3>Авторизация</h3>
+        <form>
+            <label class="text-uppercase font-weight-bold">Ваш логин</label>
+            <input type="tel" class="form-control" placeholder="Ваш логин">
+            <br>
+            <label class="text-uppercase font-weight-bold">Ваш пароль</label>
+            <input type="text" class="form-control" placeholder="Ваш пароль">
+            <br>
+            <button class="btn btn-1 btn-primary"> Авторизация</button>
+
+        </form>
+    </section>
+    <section v-if="window = `main`">
+        <footer>
+            
+        </footer>
+    </section>
+</section>
+<!-- Core -->
+<script src="./assets/vendor/jquery/jquery.min.js"></script>
+<script src="./assets/vendor/popper/popper.min.js"></script>
+<script src="./assets/vendor/bootstrap/bootstrap.min.js"></script>
+<script src="./assets/vendor/headroom/headroom.min.js"></script>
+<!-- Optional JS -->
+<script src="./assets/vendor/onscreen/onscreen.min.js"></script>
+<script src="./assets/vendor/nouislider/js/nouislider.min.js"></script>
+<script src="./assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+<!-- Argon JS -->
+<script v-if="window == 'registerOVZ'" src="js/argon.js?v=1.1.0"></script>
+</body>
+</html>
